@@ -10,11 +10,14 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Hello World'
+bat 'javac jenkinsfile.java'
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Hello World'
+bat 'java jenkinsfile.java'
+
             }
         }
     }
