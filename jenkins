@@ -2,23 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Hello') {
             steps {
-                echo 'Hello World'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Hello World'
-bat 'javac jenkinsfile.java'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Hello World'
-bat 'java jenkinsfile.java'
-
+                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, icon: '', keepAll: false, reportDir: '', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
             }
         }
     }
 }
+
